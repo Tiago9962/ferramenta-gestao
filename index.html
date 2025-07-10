@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão Definitiva - Funcional</title>
+    <title>Gestão Definitiva 5.0 - Funcional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -111,12 +111,10 @@
                 <div class="relative">
                     <div id="notifications-bell"><i class="fas fa-bell"></i><span id="notification-count" class="hidden">0</span></div>
                     <div id="notifications-panel" class="hidden"></div>
-   
                 </div>
-                <h1 class="text-4xl font-bold text-gray-800" style="color: var(--header-text);">Gestão Definitiva </h1>
+                <h1 class="text-4xl font-bold text-gray-800" style="color: var(--header-text);">Gestão Definitiva 5.0</h1>
                 <p class="text-lg mt-2" style="color: var(--subtext-color);">Sua empresa no controle, com relatórios e automações avançadas.</p>
                 <div>
-                    
 <button id="theme-toggle" class="text-xl p-2" title="Mudar tema"><i class="fas fa-moon"></i></button>
                 </div>
             </div>
@@ -125,13 +123,13 @@
         <nav class="flex justify-center items-center flex-wrap gap-2 md:gap-4 mb-8">
             <button id="nav-overview" class="nav-button active">Visão Geral</button>
             <button id="nav-stock" class="nav-button">Estoque</button>
-            
-<button id="nav-cashflow" class="nav-button">Fluxo de Caixa</button>
+            <button id="nav-cashflow" class="nav-button">Fluxo de Caixa</button>
             <button id="nav-finance" class="nav-button">Financeiro</button>
             <button id="nav-receivables" class="nav-button">Valores a Receber</button>
             <div class="relative inline-block text-left">
                 <button id="nav-reports" class="nav-button">Relatórios <i class="fas fa-chevron-down ml-2"></i></button>
-                <div id="reports-dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 
+                <div id="reports-dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white
+ring-1 ring-black ring-opacity-5
 focus:outline-none hidden" style="background-color: var(--card-bg);">
                     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         <a href="#" id="report-abc" class="block px-4 py-2 text-sm" style="color: var(--text-color);"
@@ -146,42 +144,35 @@ role="menuitem">DRE Gerencial</a>
 
         <main>
             <div id="content-overview">
-        
                 <div class="card mb-6">
                     <div class="flex flex-col md:flex-row justify-end items-center gap-4">
                         <div class="flex items-center">
-                            <label for="dashboard-period" class="mr-2 font-medium">Período:</label>
-       
+                            <label for="dashboard-period"
+class="mr-2 font-medium">Período:</label>
                             <select id="dashboard-period" class="form-group select w-48">
                                 <option value="all">Todo o Período</option>
                                 <option value="30">Últimos 30 dias</option>
-     
                                 <option value="90">Últimos 90 dias</option>
                                 <option value="month">Este Mês</option>
                                 <option value="year">Este Ano</option>
-  
                                 <option value="custom">Período Personalizado</option>
                             </select>
                         </div>
-                
                         <div id="custom-date-range" class="flex items-center gap-2 hidden">
                             <input type="date" id="start-date" class="form-group input">
                             <span>a</span>
-                           
- <input type="date" id="end-date" class="form-group input">
+                            <input type="date" id="end-date" class="form-group input">
                             <button id="apply-custom-range" class="btn-secondary px-4 py-2 text-sm">Aplicar</button>
                         </div>
                     </div>
                 </div>
-  
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
                     <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Valor em Estoque</h3><p id="kpi-stock-value" class="text-3xl font-bold mt-2">R$ 0,00</p></div>
                     <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Itens em Estoque Baixo</h3><p id="kpi-low-stock" class="text-3xl font-bold text-red-600 mt-2">0</p></div>
-               
                     <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Saldo em Caixa</h3><p id="kpi-balance" class="text-3xl font-bold text-blue-600 mt-2">R$ 0,00</p></div>
-                    <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Lucro do Período</h3><p id="kpi-profit" class="text-3xl font-bold text-purple-600 mt-2">R$ 0,00</p></div>
+                    <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Lucro do
+Período</h3><p id="kpi-profit" class="text-3xl font-bold text-purple-600 mt-2">R$ 0,00</p></div>
                     <div class="card text-center"><h3 class="font-semibold" style="color: var(--subtext-color);">Total de Valores a Receber</h3><p id="kpi-total-receivables" class="text-3xl font-bold text-orange-600 mt-2">R$ 0,00</p></div>
-              
                 </div>
                 <div class="card"><h3 class="text-xl font-semibold mb-4 text-center">Receitas vs. Despesas</h3><div class="chart-container"><canvas id="revenueExpenseChart"></canvas></div></div>
             </div>
@@ -189,138 +180,116 @@ role="menuitem">DRE Gerencial</a>
             <div id="content-stock" class="hidden">
                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div class="lg:col-span-2 card">
-    
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-semibold">Lista de Produtos</h3>
                             <div>
-                
                                 <label for="csv-upload" class="btn-secondary cursor-pointer mr-2"><i class="fas fa-upload mr-2"></i>Importar CSV</label>
                                 <input type="file" id="csv-upload" class="hidden" accept=".csv">
                                 <button id="stock-adjust-btn" class="btn-secondary mr-2"><i class="fas fa-exchange-alt mr-2"></i>Ajustar Estoque</button>
- 
                                 <button id="add-product-btn" class="btn-primary"><i class="fas fa-plus mr-2"></i>Adicionar Produto</button>
                             </div>
                         </div>
-           
                         <input type="search" id="product-search" placeholder="Buscar produto..." class="p-2 border rounded w-full mb-4" style="border-color: var(--border-color);
 background-color: var(--bg-color);">
                         <div class="overflow-x-auto"><table id="products-table"><thead><tr><th>SKU</th><th>Produto</th><th>Qtd.</th><th>Cor</th><th>Custo</th><th>Venda</th><th>Status</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
                     </div>
                     <div class="card hidden" id="product-form-card"><h3 id="product-form-title" class="text-xl font-semibold mb-4"></h3><form id="product-form"></form></div>
                 </div>
-         
             </div>
             
             <div id="content-cashflow" class="hidden">
                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div class="lg:col-span-2 card">
-                        <div class="flex justify-between items-center 
+                        <div class="flex justify-between items-center
 mb-4">
                             <h3 class="text-xl font-semibold">Últimas Transações</h3>
                             <button id="add-transaction-btn" class="btn-primary"><i class="fas fa-plus mr-2"></i>Adicionar Transação</button>
                         </div>
-           
                         <input type="search" id="transaction-search" placeholder="Buscar transação..." class="p-2 border rounded w-full mb-4" style="border-color: var(--border-color);
 background-color: var(--bg-color);">
-                        <div class="overflow-x-auto"><table id="transactions-table"><thead><tr><th>Data</th><th>Descrição</th><th>Cliente/Fornecedor</th><th>Tipo</th><th>Valor</th><th>Status</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
+                        <div class="overflow-x-auto"><table id="transactions-table"><thead><tr><th>Data</th><th>Descrição</th><th>Produto</th><th>Cliente/Fornecedor</th><th>Tipo</th><th>Valor</th><th>Status</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
                     </div>
                     <div class="card hidden" id="transaction-form-card"><h3 id="transaction-form-title" class="text-xl font-semibold mb-4"></h3><form id="transaction-form"></form></div>
                 </div>
-         
             </div>
 
             <div id="content-finance" class="hidden">
                 <div class="card mb-6">
                     <div class="flex flex-col md:flex-row justify-end items-center gap-4">
                         <div class="flex items-center">
-             
                             <label for="finance-period" class="mr-2 font-medium">Período:</label>
                             <select id="finance-period" class="form-group select w-48">
                                 <option value="all">Todo o Período</option>
-               
                                 <option value="30">Últimos 30 dias</option>
                                 <option value="90">Últimos 90 dias</option>
                                 <option value="month">Este Mês</option>
-           
                                 <option value="year">Este Ano</option>
                                 <option value="custom">Período Personalizado</option>
                             </select>
-               
                         </div>
-                        <div id="custom-finance-date-range" class="flex items-center gap-2 hidden">
+                        <div id="custom-finance-date-range" class="flex items-center
+gap-2 hidden">
                             <input type="date" id="finance-start-date" class="form-group input">
                             <span>a</span>
-  
                             <input type="date" id="finance-end-date" class="form-group input">
                             <button id="apply-finance-custom-range" class="btn-secondary px-4 py-2 text-sm">Aplicar</button>
                         </div>
-             
                     </div>
-                </div>
+                 </div>
                 <div class="card mb-8"><h3 class="text-xl font-semibold mb-4 text-center">Receitas vs. Despesas Financeiro</h3><div class="chart-container"><canvas id="financeRevenueExpenseChart"></canvas></div></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="card">
-         
                         <h3 class="text-xl font-semibold mb-4 text-red-600">Contas a Pagar</h3>
                         <div class="overflow-x-auto"><table id="payable-table"><thead><tr><th>Vencimento</th><th>Descrição</th><th>Valor</th></tr></thead><tbody></tbody></table></div>
                     </div>
                     <div class="card">
-            
                         <h3 class="text-xl font-semibold mb-4 text-green-600">Contas a Receber</h3>
                         <div class="overflow-x-auto"><table id="receivable-table"><thead><tr><th>Vencimento</th><th>Descrição</th><th>Valor</th></tr></thead><tbody></tbody></table></div>
                     </div>
                 </div>
             </div>
 
-        
             <div id="content-receivables" class="hidden">
                 <div class="card">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-xl font-semibold">Valores a Receber de Clientes</h3>
-                    </div>
-   
+                     </div>
                     <div class="overflow-x-auto"><table id="client-receivables-table"><thead><tr><th>Data da Compra</th><th>Cliente</th><th>Produto/Descrição</th><th>Valor Total</th><th>Valor Pago</th><th>Desconto</th><th>Valor Devido</th><th>Status</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
                 </div>
             </div>
 
             <div id="content-entities" class="hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              
                     <div class="card">
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-semibold">Clientes</h3>
                             <button id="add-client-btn" class="btn-primary"><i class="fas fa-plus mr-2"></i>Adicionar Cliente</button>
- 
                         </div>
                         <div class="overflow-x-auto mt-6"><table id="clients-table"><thead><tr><th>ID</th><th>Nome</th><th>Contato</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
                     </div>
-                    <div class="card">
-         
+                     <div class="card">
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-semibold">Fornecedores</h3>
                             <button id="add-supplier-btn" class="btn-primary"><i class="fas fa-plus mr-2"></i>Adicionar Fornecedor</button>
-                 
                         </div>
                         <div class="overflow-x-auto mt-6"><table id="suppliers-table"><thead><tr><th>ID</th><th>Nome</th><th>Contato</th><th>Ações</th></tr></thead><tbody></tbody></table></div>
-                    </div>
+                     </div>
                 </div>
                 <div class="card hidden mt-8" id="entity-form-card"><h3 id="entity-form-title" class="text-xl font-semibold mb-4"></h3><form id="entity-form"></form></div>
-     
             </div>
             
         </main>
         <footer class="text-center mt-12 mb-4">
-            <button id="download-excel-btn" class="btn-primary ml-4">Baixar Resumo (Excel)</button>
+             <button id="download-excel-btn" class="btn-primary ml-4">Baixar Resumo (Excel)</button>
         </footer>
     </div>
 
     <div id="modal" class="modal-overlay hidden">
         <div class="modal-content">
             <div class="flex justify-between items-center mb-4">
- 
                 <h2 id="modal-title" class="text-2xl font-bold"></h2>
                 <button id="modal-close-btn" class="text-2xl">&times;</button>
-            </div>
+             </div>
             <div id="modal-body"></div>
         </div>
     </div>
@@ -332,21 +301,17 @@ background-color: var(--bg-color);">
         const defaultData = {
             products: [
                 { sku: 'NB-001', name: 'Notebook Pro 15"', category: 'Eletrônicos', qty: 15, color: 'Prata', cost: 4500, price: 7000, minStock: 10 },
-                { 
-sku: 'SM-002', name: 'Smartphone X', category: 'Eletrônicos', qty: 8, color: 'Preto', cost: 2000, price: 3500, minStock: 15 },
+                { sku: 'SM-002', name: 'Smartphone X', category: 'Eletrônicos', qty: 8, color: 'Preto', cost: 2000, price: 3500, minStock: 15 },
                 { sku: 'CD-003', name: 'Cadeira Gamer', category: 'Móveis', qty: 30, color: 'Vermelho', cost: 800, price: 1500, minStock: 20 },
                 { sku: 'MS-004', name: 'Mouse Sem Fio', category: 'Acessórios', qty: 50, color: 'Branco', cost: 80, price: 150, minStock: 30 }
             ],
-  
             clients: [ { id: 'CLI-001', name: 'João Silva', email: 'joao@example.com', phone: '11987654321' } ],
             suppliers: [ { id: 'FOR-001', name: 'Atacado Eletrônicos', contact: 'Carlos', phone: '1155551234' } ],
             transactions: [
-                { id: 'TRN-1', date: '2025-07-01', description: 'Venda de 2 Notebooks', category: 'Vendas', type: 'Receita', value: 14000, productSku: 'NB-001', qty: 2, status: 'Recebido', clientId: 
-'CLI-001' },
-                { id: 'TRN-2', date: '2025-08-05', description: 'Pagamento de Aluguel', category: 'Aluguel', type: 'Despesa', value: 2500, productSku: '', qty: 0, status: 'A Pagar' },
-                { id: 'TRN-3', date: '2025-06-20', description: 'Compra de Estoque - Mouses', category: 'Produto (Compra de Estoque)', type: 'Despesa', value: 800, productSku: 'MS-004', qty: 10, status: 'Pago' },
-                { id: 'TRN-4', 
-date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: 'Receita', value: 3500, productSku: 'SM-002', qty: 1, status: 'A Receber', clientId: 'CLI-001' }
+                { id: 'TRN-1', date: '2025-07-01', description: 'Venda de 2 Notebooks', category: 'Vendas', type: 'Receita', value: 14000, productSku: 'NB-001', qty: 2, status: 'Recebido', clientId: 'CLI-001', supplierId: null },
+                { id: 'TRN-2', date: '2025-08-05', description: 'Pagamento de Aluguel', category: 'Aluguel', type: 'Despesa', value: 2500, productSku: '', qty: 0, status: 'A Pagar', clientId: null, supplierId: null },
+                { id: 'TRN-3', date: '2025-06-20', description: 'Compra de Estoque - Mouses', category: 'Produto (Compra de Estoque)', type: 'Despesa', value: 800, productSku: 'MS-004', qty: 10, status: 'Pago', clientId: null, supplierId: 'FOR-001' },
+                { id: 'TRN-4', date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: 'Receita', value: 3500, productSku: 'SM-002', qty: 1, status: 'A Receber', clientId: 'CLI-001', supplierId: null }
             ],
             receivables: [] // New array for tracking outstanding client payments
         };
@@ -370,36 +335,31 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
             modalBody: document.getElementById('modal-body'),
             modalCloseBtn: document.getElementById('modal-close-btn'),
             notifications: {
-    
                 bell: document.getElementById('notifications-bell'),
                 count: document.getElementById('notification-count'),
                 panel: document.getElementById('notifications-panel'),
             },
             // Navigation
             nav: {
-               
- overview: document.getElementById('nav-overview'), stock: document.getElementById('nav-stock'),
+                overview: document.getElementById('nav-overview'), stock: document.getElementById('nav-stock'),
                 cashflow: document.getElementById('nav-cashflow'), finance: document.getElementById('nav-finance'),
                 receivables: document.getElementById('nav-receivables'),
                 reports: document.getElementById('nav-reports'), entities: document.getElementById('nav-entities'),
                 reportsDropdown: document.getElementById('reports-dropdown'),
             },
-            
-// Content Sections
+            // Content Sections
             content: {
                 overview: document.getElementById('content-overview'), stock: document.getElementById('content-stock'),
                 cashflow: document.getElementById('content-cashflow'), finance: document.getElementById('content-finance'),
                 receivables: document.getElementById('content-receivables'),
                 entities: document.getElementById('content-entities'),
             },
- 
             // KPIs
             kpi: {
                 stockValue: document.getElementById('kpi-stock-value'), lowStock: document.getElementById('kpi-low-stock'),
                 balance: document.getElementById('kpi-balance'), profit: document.getElementById('kpi-profit'),
                 totalReceivables: document.getElementById('kpi-total-receivables') // New KPI
             },
-     
             // Report Links
             reportLinks: {
                 abc: document.getElementById('report-abc'), dre: document.getElementById('report-dre'),
@@ -407,7 +367,6 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
             // Misc
             dashboardPeriod: document.getElementById('dashboard-period'),
             customDateRange: document.getElementById('custom-date-range'),
-        
             startDate: document.getElementById('start-date'),
             endDate: document.getElementById('end-date'),
             applyCustomRange: document.getElementById('apply-custom-range'),
@@ -417,8 +376,7 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
             financeStartDate: document.getElementById('finance-start-date'),
             financeEndDate: document.getElementById('finance-end-date'),
             applyFinanceCustomRange: document.getElementById('apply-finance-custom-range'),
-    
-         
+            
             themeToggle: document.getElementById('theme-toggle'),
             stockAdjustBtn: document.getElementById('stock-adjust-btn'),
             csvUpload: document.getElementById('csv-upload'),
@@ -428,7 +386,6 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
             productFormTitle: document.getElementById('product-form-title'),
             productForm: document.getElementById('product-form'),
 
- 
             addTransactionBtn: document.getElementById('add-transaction-btn'),
             transactionFormCard: document.getElementById('transaction-form-card'),
             transactionFormTitle: document.getElementById('transaction-form-title'),
@@ -437,7 +394,6 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
             addClientBtn: document.getElementById('add-client-btn'),
             addSupplierBtn: document.getElementById('add-supplier-btn'),
             entityFormCard: document.getElementById('entity-form-card'),
-          
             entityFormTitle: document.getElementById('entity-form-title'),
             entityForm: document.getElementById('entity-form'),
         };
@@ -475,7 +431,7 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
                 if (r.status !== 'Pago' && r.purchaseDate) {
                     const purchaseDate = new Date(r.purchaseDate);
                     const oneMonthLater = new Date(purchaseDate);
-     
+                    
                     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
                     if (new Date() >= oneMonthLater && !r.alerted) {
                         const client = state.clients.find(c => c.id === r.clientId);
@@ -483,7 +439,6 @@ date: '2025-07-15', description: 'Venda Smartphone', category: 'Vendas', type: '
 valueDue = r.originalAmount - r.amountPaid - r.discountAmount;
                         notifications.push({ text: `Cliente ${client ? client.name : 'N/A'} (ID: ${r.clientId}) tem dívida de ${formatCurrency(valueDue)} a 1 mês.`, type: 'receivables' });
                         r.alerted = true; // Mark as alerted to prevent repeated notifications
-                 
                     }
                 }
             });
@@ -498,11 +453,9 @@ valueDue = r.originalAmount - r.amountPaid - r.discountAmount;
                     item.addEventListener('click', (e) => {
                         const type = e.target.dataset.type;
                         if (type === 'stock') switchTab('stock');
-           
                         else if (type === 'finance') switchTab('finance');
                         else if (type === 'receivables') switchTab('receivables');
                         dom.notifications.panel.classList.add('hidden');
-                        
                     });
                 });
             } else {
@@ -543,7 +496,6 @@ valueDue = r.originalAmount - r.amountPaid - r.discountAmount;
             });
             // Hide all content sections
             Object.values(dom.content).forEach(sec => sec.classList.add('hidden'));
-
             // Activate the correct button and show the correct content
             if (dom.nav[tabName]) {
                 dom.nav[tabName].classList.add('active');
@@ -574,20 +526,17 @@ valueDue = r.originalAmount - r.amountPaid - r.discountAmount;
         const processTransactions = () => {
             state.transactions.forEach(t => {
                 if (t.type === 'Receita' && t.productSku) {
-                    const product 
+                    const product
 = state.products.find(p => p.sku === t.productSku);
                     if (product) {
                         t.cost = product.cost * t.qty;
-            
                         t.profit = t.value - t.cost; 
                     }
                 } else if (t.type === 'Despesa' && t.productSku && t.category === 'Produto (Compra de Estoque)') {
                     const product = state.products.find(p => p.sku === t.productSku);
-     
                     if (product) {
                         t.cost = t.value;
                         t.profit = 0;
-                
                     }
                 }
                 else {
@@ -640,9 +589,7 @@ currentFilterEndDate : currentFinanceFilterEndDate;
                    return acc + (t.type === 'Receita' ? t.value : -t.value);
                 }
                 return acc;
-          
             }, 0);
-
             const profit = filteredTransactions.reduce((acc, t) => acc + (t.profit || 0), 0);
             const totalReceivablesValue = state.receivables.reduce((acc, r) => {
                 if (r.status !== 'Pago') {
@@ -672,17 +619,14 @@ currentFilterEndDate : currentFinanceFilterEndDate;
                 data: {
                     labels,
                     datasets: [
-                  
                         { label: 'Receitas', data: revenues, backgroundColor: '#16a34a' },
                         { label: 'Despesas', data: expenses, backgroundColor: '#dc2626' }
                     ]
                 },
                 options: {
-   
                     responsive: true, maintainAspectRatio: false,
                     scales: { y: { ticks: { color: theme === 'dark' ? '#fff' : '#000' }, grid: { color: gridColor } }, x: { ticks: { color: theme ==='dark' ? '#fff' : '#000' }, grid: { color: gridColor } } }
                 }
-     
             });
         };
 
@@ -704,16 +648,13 @@ currentFilterEndDate : currentFinanceFilterEndDate;
                 data: {
                     labels,
                     datasets: [
-          
                         { label: 'Receitas', data: revenues, borderColor: '#16a34a', fill: false },
                         { label: 'Despesas', data: expenses, borderColor: '#dc2626', fill: false }
                     ]
                 },
-        
                 options: {
                     responsive: true, maintainAspectRatio: false,
                     scales: { y: { ticks: { color: theme === 'dark' ? '#fff' : '#000' }, grid: { color: gridColor } }, x: { ticks: { color: theme ==='dark' ? '#fff' : '#000' }, grid: { color: gridColor } } }
-         
                 }
             });
         };
@@ -727,11 +668,10 @@ currentFilterEndDate : currentFinanceFilterEndDate;
                     <td>${p.sku}</td><td>${p.name}</td><td>${p.qty}</td><td>${p.color || ''}</td>
                     <td>${formatCurrency(p.cost)}</td><td>${formatCurrency(p.price)}</td>
                     <td><span class="status-badge ${p.qty < p.minStock ? 'status-low' : 'status-ok'}">${p.qty < p.minStock ? 'Baixo' : 'OK'}</span></td>
-    
                     <td>
                         <button class="btn-secondary text-xs" onclick="window.app.showProductHistory('${p.sku}')"><i class="fas fa-history"></i></button>
                         <button class="btn-secondary text-xs" onclick="window.app.editItem('product', '${p.sku}')"><i class="fas fa-edit"></i></button>
-                        <button 
+                        <button
 class="btn-delete text-xs" onclick="window.app.deleteItem('product', '${p.sku}')"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>`).join('');
@@ -739,13 +679,23 @@ class="btn-delete text-xs" onclick="window.app.deleteItem('product', '${p.sku}')
         const renderTransactionsTable = () => {
             const tbody = document.querySelector('#transactions-table tbody');
             tbody.innerHTML = [...state.transactions].sort((a, b) => new Date(b.date) - new Date(a.date)).map(t => {
-                const client = t.clientId ? state.clients.find(c => c.id === t.clientId) : null;
-                const entityName = client ? client.name : 'N/A';
+                let entityName = 'N/A';
+                if (t.clientId) {
+                    const client = state.clients.find(c => c.id === t.clientId);
+                    entityName = client ? client.name : 'N/A';
+                } else if (t.supplierId) {
+                    const supplier = state.suppliers.find(s => s.id === t.supplierId);
+                    entityName = supplier ? supplier.name : 'N/A';
+                }
+
+                const product = t.productSku ? state.products.find(p => p.sku === t.productSku) : null;
+                const productName = product ? product.name : 'N/A';
 
                 return `
                     <tr>
                         <td>${formatDate(t.date)}</td>
                         <td>${t.description}</td>
+                        <td>${productName}</td>
                         <td>${entityName}</td>
                         <td class="${t.type === 'Receita' ? 'text-green-600' : 'text-red-600'}">${t.type}</td>
                         <td class="font-semibold">${formatCurrency(t.value)}</td>
@@ -755,7 +705,6 @@ class="btn-delete text-xs" onclick="window.app.deleteItem('product', '${p.sku}')
                             <button class="btn-delete text-xs" onclick="window.app.deleteItem('transaction', '${t.id}')"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>`;
-
             }).join('');
         };
         const renderFinancialTables = () => {
@@ -775,27 +724,23 @@ class="btn-delete text-xs" onclick="window.app.deleteItem('product', '${p.sku}')
                 const client = state.clients.find(c => c.id === r.clientId);
                 const product = r.productSku ? state.products.find(p => p.sku === r.productSku) : null;
                 const valueDue = r.originalAmount - r.amountPaid - r.discountAmount;
-                const statusClass = 
+                const statusClass =
 new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : '';
                 const statusText = valueDue <= 0 ? 'Pago' : (new Date(r.dueDate) < new Date() && valueDue > 0 ? 'Atrasado' : 'Pendente');
 
                 return `
                     <tr>
-             
                         <td>${formatDate(r.purchaseDate)}</td>
                         <td>${client ? client.name : 'N/A'}</td>
                         <td>${r.description || product?.name || 'N/A'}</td>
                         <td>${formatCurrency(r.originalAmount)}</td>
-         
                         <td>${formatCurrency(r.amountPaid)}</td>
                         <td>${formatCurrency(r.discountAmount)}</td>
                         <td class="${statusClass}">${formatCurrency(valueDue)}</td>
                         <td>${statusText}</td>
-            
                         <td>
                             <button class="btn-secondary text-xs" onclick="window.app.showAmortizationForm('${r.id}')"><i class="fas fa-hand-holding-usd"></i> Amortizar</button>
                             <button class="btn-secondary text-xs" onclick="window.app.showDiscountForm('${r.id}')"><i class="fas fa-percent"></i> Desconto</button>
-                    
                     </td>
                     </tr>
                 `;
@@ -810,7 +755,6 @@ new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : ''
                     <td>${c.id}</td><td>${c.name}</td><td>${c.email || c.phone}</td>
                     <td><button class="btn-secondary text-xs" onclick="window.app.editItem('client', '${c.id}')"><i class="fas fa-edit"></i></button>
                     <button class="btn-delete text-xs" onclick="window.app.deleteItem('client', '${c.id}')"><i class="fas fa-trash"></i></button></td>
-      
                 </tr>`).join('');
         };
         const renderSuppliersTable = () => {
@@ -820,7 +764,6 @@ new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : ''
                     <td>${s.id}</td><td>${s.name}</td><td>${s.contact || s.phone}</td>
                     <td><button class="btn-secondary text-xs" onclick="window.app.editItem('supplier', '${s.id}')"><i class="fas fa-edit"></i></button>
                     <button class="btn-delete text-xs" onclick="window.app.deleteItem('supplier', '${s.id}')"><i class="fas fa-trash"></i></button></td>
-      
                 </tr>`).join('');
         };
         // RENDER: Reports
@@ -841,7 +784,6 @@ new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : ''
                 const cumulativePercent = (cumulativeRevenue / totalRevenue) * 100;
                 let classification = 'C';
                 if (cumulativePercent <= 80) classification = 'A';
-             
                 else if (cumulativePercent <= 95) classification = 'B';
                 return { ...p, classification };
             });
@@ -851,14 +793,12 @@ new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : ''
                     <td>${p.name}</td>
                     <td>${formatCurrency(p.revenue)}</td>
                 </tr>
- 
             `).join('');
             showModal('Relatório: Curva ABC de Produtos', `
                 <p class="mb-4">Classifica os produtos por relevância de faturamento. Foco nos produtos "A"!</p>
                 <table class="w-full">
                     <thead><tr><th class="w-1/6">Classe</th><th>Produto</th><th>Faturamento</th></tr></thead>
                     <tbody>${tableRows}</tbody>
-          
                 </table>
             `);
         };
@@ -874,12 +814,11 @@ new Date(r.dueDate) < new Date() && valueDue > 0 ? 'text-red-500 font-bold' : ''
                 <div class="space-y-2 text-lg">
                     <div class="flex justify-between"><span>(+) Receita Operacional Bruta</span> <span>${formatCurrency(totalRevenue)}</span></div>
                     <div class="flex justify-between"><span>(-) Custo da Mercadoria Vendida (CMV)</span> <span>${formatCurrency(cmv)}</span></div>
-                   
- <hr class="my-2 border-gray-500">
+                    <hr class="my-2 border-gray-500">
                     <div class="flex justify-between font-bold"><span>(=) Lucro Bruto</span> <span>${formatCurrency(grossProfit)}</span></div>
                     <div class="flex justify-between mt-4"><span>(-) Despesas Operacionais</span> <span>${formatCurrency(expenses)}</span></div>
                     <hr class="my-2 border-gray-500">
-                    <div class="flex justify-between 
+                    <div class="flex justify-between
 font-bold text-2xl ${netIncome >= 0 ? 'text-green-500' : 'text-red-500'}"><span>(=) Resultado Líquido</span> <span>${formatCurrency(netIncome)}</span></div>
                 </div>
             `;
@@ -907,46 +846,37 @@ font-bold text-2xl ${netIncome >= 0 ? 'text-green-500' : 'text-red-500'}"><span>
                     .filter(t => t.productSku === sku && (t.type === 'Receita' || t.category === 'Produto (Compra de Estoque)' || t.category === 'Ajuste'))
                     .sort((a,b) => new Date(b.date) - new Date(a.date))
                     .map(t => {
-          
                         let qtyChange = 0;
                         let operation = '';
                         if (t.type === 'Receita') {
-                            
-qtyChange = -t.qty;
+                            qtyChange = -t.qty;
                             operation = 'Venda';
                         } else if (t.category === 'Produto (Compra de Estoque)') {
                             qtyChange = t.qty;
-     
                             operation = 'Compra';
                         } else if (t.category === 'Ajuste') {
                             qtyChange = t.qty;
-               
                             operation = 'Ajuste';
                         }
                         return `
                             <tr>
-        
                                 <td>${formatDate(t.date)}</td>
                                 <td>${operation}: ${t.description}</td>
-                                <td class="${qtyChange < 0 ?
-'text-red-500' : 'text-green-500'}">${qtyChange > 0 ? '+' : ''}${qtyChange}</td>
+                                <td class="${qtyChange < 0 ? 'text-red-500' : 'text-green-500'}">${qtyChange > 0 ? '+' : ''}${qtyChange}</td>
                             </tr>
                         `;
                     }).join('');
                 showModal(`Histórico: ${product.name}`, `
-  
                     <table class="w-full"><thead><tr><th>Data</th><th>Operação</th><th>Qtd.</th></tr></thead><tbody>${history}</tbody></table>
                 `);
             },
             deleteItem: (type, id) => {
                 if (!confirm(`Tem certeza que deseja deletar este ${type}?`)) return;
-             
                 if (type === 'product') {
                     state.products = state.products.filter(p => p.sku !== id);
                 } else if (type === 'transaction') {
                     state.transactions = state.transactions.filter(t => t.id !== id);
-                } else if 
-(type === 'client') {
+                } else if (type === 'client') {
                     state.clients = state.clients.filter(c => c.id !== id);
                     state.receivables = state.receivables.filter(r => r.clientId !== id);
                 } else if (type === 'supplier') {
@@ -977,44 +907,35 @@ qtyChange = -t.qty;
                 dom.productFormCard.classList.remove('hidden');
                 dom.productFormTitle.textContent = product ? 'Editar Produto' : 'Adicionar Novo Produto';
                 dom.productForm.innerHTML = `
-                    <div class="form-group"><label for="product-sku">SKU (Opcional):</label><input type="text" id="product-sku" value="${product ? product.sku : ''}" ${product ?
-'readonly' : ''}></div>
+                    <div class="form-group"><label for="product-sku">SKU (Opcional):</label><input type="text" id="product-sku" value="${product ? product.sku : ''}" ${product ? 'readonly' : ''}></div>
                     <div class="form-group"><label for="product-name">Nome:</label><input type="text" id="product-name" value="${product ? product.name : ''}" required></div>
                     <div class="form-group"><label for="product-category">Categoria:</label><input type="text" id="product-category" value="${product ? product.category : ''}" required></div>
                     <div class="form-group"><label for="product-color">Cor:</label><input type="text" id="product-color" value="${product ? product.color || '' : ''}"></div>
-       
                     <div class="form-group"><label for="product-qty">Quantidade:</label><input type="number" id="product-qty" value="${product ? product.qty : 0}" required min="0"></div>
                     <div class="form-group"><label for="product-cost">Custo:</label><input type="number" id="product-cost" value="${product ? product.cost : 0}" step="0.01" required min="0"></div>
-                    <div class="form-group"><label for="product-price">Preço de Venda:</label><input type="number" id="product-price" value="${product ?
-product.price : 0}" step="0.01" required min="0"></div>
-                    <div class="form-group"><label for="product-minStock">Estoque Mínimo:</label><input type="number" id="product-minStock" value="${product ?
-product.minStock : 0}" required min="0"></div>
+                    <div class="form-group"><label for="product-price">Preço de Venda:</label><input type="number" id="product-price" value="${product ? product.price : 0}" step="0.01" required min="0"></div>
+                    <div class="form-group"><label for="product-minStock">Estoque Mínimo:</label><input type="number" id="product-minStock" value="${product ? product.minStock : 0}" required min="0"></div>
                     <button type="submit" class="btn-primary w-full">${product ? 'Salvar Alterações' : 'Adicionar Produto'}</button>
                 `;
                 dom.productForm.onsubmit = (e) => {
                     e.preventDefault();
-           
                     let sku = document.getElementById('product-sku').value.trim();
                     if (!sku) {
                         sku = generateId('PROD');
                     } else if (!product && state.products.some(p => p.sku === sku)) {
-     
                         alert('SKU já existe. Por favor, insira um SKU único ou deixe em branco para gerar automaticamente.');
                         return;
                     }
 
-                    const newProduct 
-= {
+                    const newProduct= {
                         sku: sku,
                         name: document.getElementById('product-name').value.trim(),
                         category: document.getElementById('product-category').value.trim(),
-                        
-color: document.getElementById('product-color').value.trim(),
+                        color: document.getElementById('product-color').value.trim(),
                         qty: parseInt(document.getElementById('product-qty').value),
                         cost: parseFloat(document.getElementById('product-cost').value),
                         price: parseFloat(document.getElementById('product-price').value),
-                        
-minStock: parseInt(document.getElementById('product-minStock').value),
+                        minStock: parseInt(document.getElementById('product-minStock').value),
                     };
                     if (product) {
                         Object.assign(product, newProduct);
@@ -1033,7 +954,6 @@ minStock: parseInt(document.getElementById('product-minStock').value),
                     <form id="stock-adjust-form" class="space-y-4">
                         <div class="form-group"><label for="adj-product">Produto:</label><select id="adj-product" class="form-group select" required>${productOptions}</select></div>
                         <div class="form-group"><label for="adj-qty">Nova Quantidade Total:</label><input type="number" id="adj-qty" required min="0"></div>
-             
                         <div class="form-group"><label for="adj-reason">Motivo:</label><input type="text" id="adj-reason" placeholder="Ex: Contagem de inventário, perda" required></div>
                         <button type="submit" class="btn-primary w-full">Confirmar Ajuste</button>
                     </form>
@@ -1045,21 +965,17 @@ minStock: parseInt(document.getElementById('product-minStock').value),
                     const sku = document.getElementById('adj-product').value;
                     const newQty = parseInt(document.getElementById('adj-qty').value);
                     const reason = document.getElementById('adj-reason').value;
-   
                     const product = state.products.find(p => p.sku === sku);
                     
                     if (product) {
                         const qtyChange = newQty - product.qty;
-     
                         product.qty = newQty;
 
                         state.transactions.push({
-                        
-    id: generateId('LOG'),
+                            id: generateId('LOG'),
                             date: new Date().toISOString().split('T')[0],
                             description: `Ajuste de estoque: ${reason}`,
-                            category: 'Ajuste', type: 'Log', value: 
-0,
+                            category: 'Ajuste', type: 'Log', value: 0,
                             productSku: sku, qty: qtyChange, status: 'Concluído'
                         });
                         saveData();
@@ -1080,15 +996,12 @@ minStock: parseInt(document.getElementById('product-minStock').value),
                         const [sku, name, category, qty, cost, price, minStock, color] = line.split(',');
                         if (sku && name && !state.products.some(p => p.sku === sku.trim())) {
                             state.products.push({
-  
                                 sku: sku.trim(), name: name.trim(), category: category.trim(),
                                 qty: parseInt(qty), cost: parseFloat(cost), price: parseFloat(price), minStock: parseInt(minStock),
-                          
                                 color: color ? color.trim() : ''
                             });
                             importedCount++;
                         }
-         
                     });
                     alert(`${importedCount} produtos importados com sucesso!`);
                     saveData();
@@ -1101,84 +1014,76 @@ minStock: parseInt(document.getElementById('product-minStock').value),
                 dom.transactionFormTitle.textContent = transaction ? 'Editar Transação' : 'Registrar Nova Transação';
                 const productOptions = state.products.map(p => `<option value="${p.sku}" data-price="${p.price}" data-cost="${p.cost}" data-qty="${p.qty}">${p.name} (Qtd: ${p.qty})</option>`).join('');
                 const clientOptions = state.clients.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+                const supplierOptions = state.suppliers.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+                
                 dom.transactionForm.innerHTML = `
                     <div class="form-group"><label for="trn-date">Data:</label><input type="date" id="trn-date" value="${transaction ? formatDateForInput(transaction.date) : new Date().toISOString().split('T')[0]}" required></div>
                     <div class="form-group"><label for="trn-description">Descrição (Opcional):</label><input type="text" id="trn-description" value="${transaction ? transaction.description : ''}"></div>
                     
-                 
                     <div class="form-group"><label for="trn-type">Tipo:</label><select id="trn-type" class="form-group select" required>
-                        <option value="Receita" ${transaction && transaction.type === 'Receita' ?
-'selected' : ''}>Receita</option>
-                        <option value="Despesa" ${transaction && transaction.type === 'Despesa' ?
-'selected' : ''}>Despesa</option>
+                        <option value="Receita" ${transaction && transaction.type === 'Receita' ? 'selected' : ''}>Receita</option>
+                        <option value="Despesa" ${transaction && transaction.type === 'Despesa' ? 'selected' : ''}>Despesa</option>
                     </select></div>
 
                     <div class="form-group"><label for="trn-category">Categoria:</label><select id="trn-category" class="form-group select" required>
                         </select></div>
 
                     <div class="form-group" id="product-selection-group" style="display:none;">
-     
                         <label for="trn-product-sku">Produto:</label>
                         <select id="trn-product-sku" class="form-group select">
                             <option value="">Selecione um produto</option>
-                      
                             ${productOptions}
                         </select>
                         <label for="trn-qty">Quantidade:</label>
                         <input type="number" id="trn-qty" value="${transaction ? transaction.qty : 1}" min="1">
-             
                         <p id="current-stock-info" class="text-sm text-gray-500"></p>
                     </div>
 
                     <div class="form-group" id="client-id-group" style="display:none;">
-                        <label for="trn-client-id">Cliente:</label>
-                  
-                        <select id="trn-client-id" class="form-group select">
+                         <label for="trn-client-id">Cliente:</label>
+                         <select id="trn-client-id" class="form-group select">
                             <option value="">Selecione um cliente (Opcional)</option>
                             ${clientOptions}
                         </select>
-       
+                    </div>
+
+                    <div class="form-group" id="supplier-id-group" style="display:none;">
+                         <label for="trn-supplier-id">Fornecedor:</label>
+                         <select id="trn-supplier-id" class="form-group select">
+                             <option value="">Selecione um fornecedor (Opcional)</option>
+                             ${supplierOptions}
+                         </select>
                     </div>
                     
-                    <div class="form-group"><label for="trn-base-value">Valor Base (Preço do Produto/Custo da Despesa):</label><input type="number" id="trn-base-value" value="${transaction ?
-transaction.originalValue || transaction.value : 0}" step="0.01" required min="0"></div>
+                    <div class="form-group"><label for="trn-base-value">Valor Base (Preço do Produto/Custo da Despesa):</label><input type="number" id="trn-base-value" value="${transaction ? transaction.originalValue || transaction.value : 0}" step="0.01" required min="0"></div>
                     
                     <div id="sales-payment-section" style="display:none;">
                         <div class="form-group flex gap-2">
-                        
                             <div class="flex-1">
                                 <label for="trn-discount-type">Tipo de Desconto:</label>
                                 <select id="trn-discount-type" class="form-group select">
-                         
                                     <option value="none">Nenhum</option>
                                     <option value="percent">%</option>
                                     <option value="amount">R$</option>
-              
                                 </select>
                             </div>
                             <div class="flex-1">
-                         
                                 <label for="trn-discount-value">Valor/Percentual Desconto:</label>
                                 <input type="number" id="trn-discount-value" value="0" step="0.01" min="0">
                             </div>
                         </div>
-  
                         <div class="form-group"><label for="trn-total-after-discount">Total Líquido da Venda:</label><input type="number" id="trn-total-after-discount" value="0" step="0.01" readonly></div>
-                        <div class="form-group"><label for="trn-amount-paid">Valor Pago pelo Cliente:</label><input type="number" id="trn-amount-paid" value="${transaction ?
-transaction.value : 0}" step="0.01" required min="0"></div>
+                        <div class="form-group"><label for="trn-amount-paid">Valor Pago pelo Cliente:</label><input type="number" id="trn-amount-paid" value="${transaction ? transaction.value : 0}" step="0.01" required min="0"></div>
                         <div class="form-group"><label for="trn-remaining-amount">Valor Restante a Pagar:</label><input type="number" id="trn-remaining-amount" value="0" step="0.01" readonly></div>
                     </div>
 
                     <div class="form-group"><label for="trn-status">Status:</label><select id="trn-status" class="form-group select" required>
-               
                         <option value="A Pagar" ${transaction && transaction.status === 'A Pagar' ? 'selected' : ''}>A Pagar</option>
                         <option value="Pago" ${transaction && transaction.status === 'Pago' ? 'selected' : ''}>Pago</option>
                         <option value="A Receber" ${transaction && transaction.status === 'A Receber' ? 'selected' : ''}>A Receber</option>
-       
                         <option value="Recebido" ${transaction && transaction.status === 'Recebido' ? 'selected' : ''}>Recebido</option>
                     </select></div>
-                    <button type="submit" class="btn-primary w-full">${transaction ?
-'Salvar Alterações' : 'Registrar Transação'}</button>
+                    <button type="submit" class="btn-primary w-full">${transaction ? 'Salvar Alterações' : 'Registrar Transação'}</button>
                 `;
                 const trnTypeSelect = document.getElementById('trn-type');
                 const trnCategorySelect = document.getElementById('trn-category');
@@ -1188,6 +1093,8 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                 const currentStockInfo = document.getElementById('current-stock-info');
                 const clientIdGroup = document.getElementById('client-id-group');
                 const trnClientId = document.getElementById('trn-client-id');
+                const supplierIdGroup = document.getElementById('supplier-id-group');
+                const trnSupplierId = document.getElementById('trn-supplier-id');
                 const trnBaseValue = document.getElementById('trn-base-value');
                 const salesPaymentSection = document.getElementById('sales-payment-section');
                 const trnDiscountType = document.getElementById('trn-discount-type');
@@ -1208,6 +1115,7 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                 
                 if (transaction && trnProductSku && transaction.productSku) trnProductSku.value = transaction.productSku;
                 if (transaction && trnClientId && transaction.clientId) trnClientId.value = transaction.clientId;
+                if (transaction && trnSupplierId && transaction.supplierId) trnSupplierId.value = transaction.supplierId;
                 if (transaction && transaction.discountType) trnDiscountType.value = transaction.discountType;
                 if (transaction && transaction.discountValue) trnDiscountValue.value = transaction.discountValue;
 
@@ -1223,13 +1131,11 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                         totalAfterDiscount = baseVal - discountVal;
                     }
                     if (totalAfterDiscount < 0) totalAfterDiscount = 0;
-
                     trnTotalAfterDiscount.value = totalAfterDiscount.toFixed(2);
                     const amountPaid = parseFloat(trnAmountPaid.value) || 0;
                     let remaining = totalAfterDiscount - amountPaid;
                     if (remaining < 0) remaining = 0;
                     trnRemainingAmount.value = remaining.toFixed(2);
-                    
                     if (trnTypeSelect.value === 'Receita') {
                         if (remaining === 0) {
                             document.getElementById('trn-status').value = 'Recebido';
@@ -1251,7 +1157,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     const productStock = selectedProduct && selectedProduct.dataset.qty ? parseInt(selectedProduct.dataset.qty) : 0;
                     const productPrice = selectedProduct && selectedProduct.dataset.price ? parseFloat(selectedProduct.dataset.price) : 0;
                     const productCost = selectedProduct && selectedProduct.dataset.cost ? parseFloat(selectedProduct.dataset.cost) : 0;
-
                     const isProductRelated = (type === 'Receita' && category === 'Vendas') ||
 (type === 'Despesa' && category === 'Produto (Compra de Estoque)');
                     productSelectionGroup.style.display = isProductRelated ? 'block' : 'none';
@@ -1273,12 +1178,13 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                         }
                     }
 
-                    clientIdGroup.style.display = (type === 'Receita' && category === 'Vendas') ?
-'block' : 'none';
+                    clientIdGroup.style.display = (type === 'Receita' && category === 'Vendas') ? 'block' : 'none';
                     if (!(type === 'Receita' && category === 'Vendas')) trnClientId.value = '';
-                    
-                    salesPaymentSection.style.display = (type === 'Receita' && category === 'Vendas') ?
-'block' : 'none';
+
+                    supplierIdGroup.style.display = (type === 'Despesa') ? 'block' : 'none';
+                    if (type !== 'Despesa') trnSupplierId.value = '';
+
+                    salesPaymentSection.style.display = (type === 'Receita' && category === 'Vendas') ? 'block' : 'none';
                     if (!(type === 'Receita' && category === 'Vendas')) {
                         trnDiscountType.value = 'none';
                         trnDiscountValue.value = 0;
@@ -1299,11 +1205,11 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                 
                 updateCategoryOptions();
                 toggleDynamicFields();
-
                 if (transaction) {
                     trnProductSku.value = transaction.productSku ||'';
                     trnQty.value = transaction.qty || 1;
                     trnClientId.value = transaction.clientId || '';
+                    trnSupplierId.value = transaction.supplierId || '';
                     trnDiscountType.value = transaction.discountType || 'none';
                     trnDiscountValue.value = transaction.discountValue || 0;
                     trnAmountPaid.value = transaction.value;
@@ -1320,6 +1226,7 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     let qty = parseInt(trnQty.value || 0);
                     const baseValue = parseFloat(trnBaseValue.value);
                     const clientId = trnClientId.value;
+                    const supplierId = trnSupplierId.value;
                     let status = document.getElementById('trn-status').value;
 
                     let originalSaleValue = baseValue;
@@ -1327,7 +1234,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     let discountValue = parseFloat(trnDiscountValue.value) || 0;
                     let amountPaid = parseFloat(trnAmountPaid.value);
                     let remainingAmount = parseFloat(trnRemainingAmount.value);
-                    
                     if (productSku) {
                         const product = state.products.find(p => p.sku === productSku);
                         if (product) {
@@ -1351,12 +1257,12 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                         qty: qty,
                         status: status,
                         clientId: clientId || null,
+                        supplierId: supplierId || null,
                         originalValue: (type === 'Receita' && category === 'Vendas') ? originalSaleValue : null,
                         discountType: (type === 'Receita' && category === 'Vendas') ? discountType : null,
                         discountValue: (type === 'Receita' && category === 'Vendas') ? discountValue : null,
                         amountPaidForSale: (type === 'Receita' && category === 'Vendas') ? amountPaid : null,
                     };
-
                     if (transaction) {
                         const oldTransaction = { ...transaction };
                         Object.assign(transaction, newTransactionData);
@@ -1432,7 +1338,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     <p class="mb-4">Valor devido atual: <strong>${formatCurrency(valueDue)}</strong></p>
                     <form id="amortization-form" class="space-y-4">
                         <div class="form-group"><label for="amort-amount">Valor a Pagar:</label><input type="number" id="amort-amount" step="0.01" min="0.01" max="${valueDue.toFixed(2)}" required></div>
-                 
                         <div class="form-group"><label for="amort-date">Data do Pagamento:</label><input type="date" id="amort-date" value="${new Date().toISOString().split('T')[0]}" required></div>
                         <button type="submit" class="btn-primary w-full">Registrar Pagamento</button>
                     </form>
@@ -1443,33 +1348,27 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     const paymentDate = document.getElementById('amort-date').value;
 
                     if (amountPaid > valueDue) {
-       
                         alert('Valor a pagar excede o valor devido.');
                         return;
                     }
 
                     receivable.amountPaid += amountPaid;
-           
                     if (receivable.amountPaid + receivable.discountAmount >= receivable.originalAmount) {
                         receivable.status = 'Pago';
                     } else {
                         receivable.status = 'Parcialmente Pago';
-          
                     }
 
                     state.transactions.push({
                         id: generateId('TRN'),
-                  
                         date: paymentDate,
                         description: `Pagamento parcial de ${receivable.description} (${receivable.clientName})`,
                         category: 'Pagamento de Dívida',
                         type: 'Receita',
-            
                         value: amountPaid,
                         productSku: null,
                         qty: 0,
                         status: 'Recebido',
-      
                         clientId: receivable.clientId
                     });
                     saveData();
@@ -1485,18 +1384,15 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     <p class="mb-4">Valor devido atual: <strong>${formatCurrency(valueDue)}</strong></p>
                     <form id="discount-form" class="space-y-4">
                         <div class="form-group">
-                          
                             <label for="discount-type">Tipo de Desconto:</label>
                             <select id="discount-type" class="form-group select">
                                 <option value="percent">%</option>
-                               
                                 <option value="amount">R$</option>
                             </select>
                         </div>
                         <div class="form-group"><label for="discount-value">Valor do Desconto:</label><input type="number" id="discount-value" step="0.01" min="0" required></div>
-             
                         <button type="submit" class="btn-primary w-full">Aplicar Desconto</button>
-                    </form>
+                     </form>
                 `);
                 document.getElementById('discount-form').addEventListener('submit', e => {
                     e.preventDefault();
@@ -1504,18 +1400,15 @@ transaction.value : 0}" step="0.01" required min="0"></div>
                     const discountValueInput = parseFloat(document.getElementById('discount-value').value);
                     let actualDiscountAmount = 0;
 
-        
                     if (discountType === 'percent') {
                         actualDiscountAmount = (valueDue * discountValueInput) / 100;
                     } else { // amount
                         actualDiscountAmount = discountValueInput;
-    
                     }
 
                     if (actualDiscountAmount > valueDue) {
                         alert('Valor do desconto excede o valor devido.');
                         return;
-      
                     }
 
                     receivable.discountAmount += actualDiscountAmount;
@@ -1532,26 +1425,22 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             },
             showEntityForm: (entityType, entity = null) => {
                 dom.entityFormCard.classList.remove('hidden');
-                dom.entityFormTitle.textContent = entity ? `Editar ${entityType === 'client' ? 'Cliente' : 'Fornecedor'}` : `Adicionar Novo ${entityType === 'client' ?
-'Cliente' : 'Fornecedor'}`;
+                dom.entityFormTitle.textContent = entity ? `Editar ${entityType === 'client' ? 'Cliente' : 'Fornecedor'}` : `Adicionar Novo ${entityType === 'client' ? 'Cliente' : 'Fornecedor'}`;
                 let formHtml = '';
                 if (entityType === 'client') {
                     formHtml = `
                         <div class="form-group"><label for="entity-name">Nome:</label><input type="text" id="entity-name" value="${entity ? entity.name : ''}" required></div>
-                        <div class="form-group"><label for="entity-email">Email:</label><input type="email" id="entity-email" value="${entity ? entity.email : 
-''}"></div>
+                        <div class="form-group"><label for="entity-email">Email:</label><input type="email" id="entity-email" value="${entity ? entity.email : ''}"></div>
                         <div class="form-group"><label for="entity-phone">Telefone:</label><input type="text" id="entity-phone" value="${entity ? entity.phone : ''}"></div>
                     `;
                 } else { // supplier
                     formHtml = `
                         <div class="form-group"><label for="entity-name">Nome da Empresa:</label><input type="text" id="entity-name" value="${entity ? entity.name : ''}" required></div>
                         <div class="form-group"><label for="entity-contact">Contato Principal:</label><input type="text" id="entity-contact" value="${entity ? entity.contact : ''}"></div>
-    
                         <div class="form-group"><label for="entity-phone">Telefone:</label><input type="text" id="entity-phone" value="${entity ? entity.phone : ''}"></div>
                     `;
                 }
-                formHtml += `<button type="submit" class="btn-primary w-full">${entity ?
-'Salvar Alterações' : 'Adicionar'}</button>`;
+                formHtml += `<button type="submit" class="btn-primary w-full">${entity ? 'Salvar Alterações' : 'Adicionar'}</button>`;
                 dom.entityForm.innerHTML = formHtml;
 
                 dom.entityForm.onsubmit = (e) => {
@@ -1584,7 +1473,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             }
         };
         window.app = app;
-
         // --- EVENT LISTENERS (REWRITTEN FOR STABILITY) ---
         
         // Main navigation tabs
@@ -1594,11 +1482,9 @@ transaction.value : 0}" step="0.01" required min="0"></div>
         dom.nav.finance.addEventListener('click', () => switchTab('finance'));
         dom.nav.receivables.addEventListener('click', () => switchTab('receivables'));
         dom.nav.entities.addEventListener('click', () => switchTab('entities'));
-
         // Other UI elements
         dom.modalCloseBtn.addEventListener('click', hideModal);
         dom.themeToggle.addEventListener('click', toggleTheme);
-        
         // Dashboard Period Filter
         dom.dashboardPeriod.addEventListener('change', () => {
             if (dom.dashboardPeriod.value === 'custom') {
@@ -1606,7 +1492,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             } else {
                 dom.customDateRange.classList.add('hidden');
                 currentFilterStartDate = null;
-      
                 currentFilterEndDate = null;
                 renderDashboard();
             }
@@ -1616,7 +1501,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             currentFilterEndDate = new Date(dom.endDate.value);
             renderDashboard();
         });
-        
         // Finance Period Filter
         dom.financePeriod.addEventListener('change', () => {
             if (dom.financePeriod.value === 'custom') {
@@ -1624,7 +1508,6 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             } else {
                 dom.customFinanceDateRange.classList.add('hidden');
                 currentFinanceFilterStartDate = null;
-      
                 currentFinanceFilterEndDate = null;
                 renderFinancialTables();
                 renderFinanceChart();
@@ -1636,12 +1519,10 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             renderFinancialTables();
             renderFinanceChart();
         });
-        
         // Reports Dropdown
         dom.nav.reports.addEventListener('click', () => dom.nav.reportsDropdown.classList.toggle('hidden'));
         dom.reportLinks.abc.addEventListener('click', (e) => { e.preventDefault(); renderABCReport(); dom.nav.reportsDropdown.classList.add('hidden'); });
         dom.reportLinks.dre.addEventListener('click', (e) => { e.preventDefault(); renderDRE(); dom.nav.reportsDropdown.classList.add('hidden'); });
-        
         // Notifications Panel
         dom.notifications.bell.addEventListener('click', () => {
             const wasHidden = dom.notifications.panel.classList.contains('hidden');
@@ -1649,13 +1530,11 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             
             if (!wasHidden) {
                 dom.notifications.count.classList.add('hidden');
-      
                 dom.notifications.panel.innerHTML = '<div class="notification-item">Nenhuma notificação nova.</div>';
                 state.receivables.forEach(r => r.alerted = false);
                 saveData();
             }
         });
-        
         // Action Buttons
         dom.stockAdjustBtn.addEventListener('click', app.handleStockAdjustment);
         dom.csvUpload.addEventListener('change', app.handleCsvImport);
@@ -1663,23 +1542,19 @@ transaction.value : 0}" step="0.01" required min="0"></div>
         dom.addTransactionBtn.addEventListener('click', () => { editingId = null; app.showTransactionForm(); });
         dom.addClientBtn.addEventListener('click', () => { editingId = null; app.showEntityForm('client'); });
         dom.addSupplierBtn.addEventListener('click', () => { editingId = null; app.showEntityForm('supplier'); });
-        
         // Search Inputs
         document.getElementById('product-search').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             document.querySelectorAll('#products-table tbody tr').forEach(row => {
                 row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
-          
             });
         });
         document.getElementById('transaction-search').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             document.querySelectorAll('#transactions-table tbody tr').forEach(row => {
                 row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
-          
             });
         });
-
         // Download Excel
         document.getElementById('download-excel-btn').addEventListener('click', () => {
             const wb = XLSX.utils.book_new();
@@ -1689,8 +1564,8 @@ transaction.value : 0}" step="0.01" required min="0"></div>
             const ws_products = XLSX.utils.aoa_to_sheet([productsHeaders, ...productsData]);
             XLSX.utils.book_append_sheet(wb, ws_products, 'Produtos');
 
-            const transactionsHeaders = ['ID', 'Data', 'Descrição', 'Tipo', 'Categoria', 'Valor', 'SKU Produto', 'Qtd. Produto', 'Status', 'Cliente ID', 'Valor Original Venda', 'Tipo Desconto', 'Valor Desconto', 'Valor Pago na Venda'];
-            const transactionsData = state.transactions.map(t => [t.id, t.date, t.description, t.type, t.category, t.value, t.productSku, t.qty, t.status, t.clientId, t.originalValue, 
+            const transactionsHeaders = ['ID', 'Data', 'Descrição', 'Tipo', 'Categoria', 'Valor', 'SKU Produto', 'Qtd. Produto', 'Status', 'Cliente ID', 'Fornecedor ID', 'Valor Original Venda', 'Tipo Desconto', 'Valor Desconto', 'Valor Pago na Venda'];
+            const transactionsData = state.transactions.map(t => [t.id, t.date, t.description, t.type, t.category, t.value, t.productSku, t.qty, t.status, t.clientId, t.supplierId, t.originalValue, 
 t.discountType, t.discountValue, t.amountPaidForSale]);
             const ws_transactions = XLSX.utils.aoa_to_sheet([transactionsHeaders, ...transactionsData]);
             XLSX.utils.book_append_sheet(wb, ws_transactions, 'Transacoes');
@@ -1699,7 +1574,6 @@ t.discountType, t.discountValue, t.amountPaidForSale]);
             const clientsData = state.clients.map(c => [c.id, c.name, c.email, c.phone]);
             const ws_clients = XLSX.utils.aoa_to_sheet([clientsHeaders, ...clientsData]);
             XLSX.utils.book_append_sheet(wb, ws_clients, 'Clientes');
-
             const suppliersHeaders = ['ID', 'Nome', 'Contato', 'Telefone'];
             const suppliersData = state.suppliers.map(s => [s.id, s.name, s.contact, s.phone]);
             const ws_suppliers = XLSX.utils.aoa_to_sheet([suppliersHeaders, ...suppliersData]);
@@ -1712,11 +1586,9 @@ t.discountType, t.discountValue, t.amountPaidForSale]);
             
             XLSX.writeFile(wb, 'gestao_definitiva_dados.xlsx');
         });
-        
         // --- INITIALIZATION ---
         const init = () => {
-            const savedTheme = localStorage.getItem('gestao5.0_theme') ||
-'light';
+            const savedTheme = localStorage.getItem('gestao5.0_theme') || 'light';
             applyTheme(savedTheme);
             loadData();
             renderAll();
